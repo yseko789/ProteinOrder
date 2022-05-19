@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AmountFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yseko.proteinorder.model.OrderViewModel" />
+        <variable
+            name="amountFragment"
+            type="com.yseko.proteinorder.AmountFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <RadioGroup
+            android:id="@+id/amount_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ten"
+                android:onClick="@{()->viewModel.setAmount(10)}"
+                android:checked="@{viewModel.amount.equals(10)}"/>
+
+            <RadioButton
+                android:id="@+id/fifteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fifteen"
+                android:onClick="@{()->viewModel.setAmount(15)}"
+                android:checked="@{viewModel.amount.equals(15)}"/>
+
+            <RadioButton
+                android:id="@+id/twenty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/twenty"
+                android:onClick="@{()->viewModel.setAmount(20)}"
+                android:checked="@{viewModel.amount.equals(20)}"/>
+
+            <RadioButton
+                android:id="@+id/thirty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thirty"
+                android:onClick="@{()->viewModel.setAmount(30)}"
+                android:checked="@{viewModel.amount.equals(30)}"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/subtotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@{@string/subtotal_price(viewModel.price)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amount_options" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtotal"
+            android:onClick="@{()->amountFragment.nextScreen()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    
+
+</layout>
