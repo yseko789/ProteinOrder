@@ -15,11 +15,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/summary"/>
+        android:orientation="vertical"
+        android:padding="16dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,6 +54,12 @@
             android:layout_height="wrap_content"
             android:text="@string/send_order"
             android:onClick="@{()->summaryFragment.sendOrder()}"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="@{()->summaryFragment.cancelOrder()}"/>
 
 
     </LinearLayout>

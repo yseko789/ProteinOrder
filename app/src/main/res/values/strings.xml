@@ -4,6 +4,7 @@
     <string name="textTitle">Order Protein</string>
     <string name="start">Start</string>
     <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
     <string name="vanilla">Vanilla</string>
     <string name="chocolate">Chocolate</string>
     <string name="mocha">Mocha</string>

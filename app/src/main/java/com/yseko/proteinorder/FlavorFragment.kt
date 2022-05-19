@@ -42,4 +42,9 @@ class FlavorFragment : Fragment() {
     fun nextScreen(){
         findNavController().navigate(R.id.action_flavorFragment_to_amountFragment)
     }
+
+    fun cancelOrder(){
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_flavorFragment_to_startFragment)
+    }
 }

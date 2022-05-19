@@ -34,12 +34,18 @@ class DateFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
         }
     }
-    fun nextScreen(){
-        findNavController().navigate(R.id.action_dateFragment_to_summaryFragment)
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    fun nextScreen(){
+        findNavController().navigate(R.id.action_dateFragment_to_summaryFragment)
+    }
+
+    fun cancelOrder(){
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_dateFragment_to_startFragment)
     }
 }

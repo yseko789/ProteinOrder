@@ -43,4 +43,9 @@ class AmountFragment : Fragment() {
         findNavController().navigate(R.id.action_amountFragment_to_dateFragment)
     }
 
+    fun cancelOrder(){
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_amountFragment_to_startFragment)
+    }
+
 }
